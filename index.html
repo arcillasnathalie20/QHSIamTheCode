@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IamTheCode - Code for Change</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a2e0e6a34f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <h1><i class="fas fa-code"></i>Empowering Minds | Building the Futurre</h1>
+    <p class="subtitle">Quirino High School</p>
+    <nav>
+      <button onclick="showSection('home')">Home</button>
+      <button onclick="showSection('sdg')">SDG Project</button>
+      <button onclick="showSection('testimonials')">Testimonials</button>
+      <button onclick="showSection('gallery')">Gallery</button>
+    </nav>
+  </header>
+
+  <!-- HOME SECTION -->
+  <section id="home" class="active section">
+    <h2><i class="fas fa-laptop-code"></i> About Our Journey</h2>
+    <p class="intro-text">
+      We are Grade 12 students participating in the IamTheCode program, where we
+      learn coding, creativity, and collaboration while linking our projects
+      with the UN Sustainable Development Goals.
+    </p>
+
+    <div class="divider"></div>
+
+    <h2><i class="fas fa-users"></i> Meet Our Team</h2>
+
+    <!-- Teacher Facilitator -->
+    <h3 class="team-category">Teacher Facilitator</h3>
+    <div class="team-row">
+      <div class="team-card" onclick="showBio('Our teacher facilitator, Ms. Maria Theresa B. Baltazar, guided us through our IamTheCode journey and supported every step.')">
+        <img src="images/teacher.jpg" alt="Teacher Facilitator" />
+        <h4>Ms. Maria Theresa B. Baltazar</h4>
+        <p>Teacher Facilitator</p>
+      </div>
+    </div>
+
+    <!-- Team Leaders -->
+    <h3 class="team-category">Team Leaders</h3>
+    <div class="team-row">
+      <div class="team-card" onclick="showBio('Nathalie leads our coding and SDG research section.')">
+        <img src="images/leader1.jpg" alt="Team Leader 1" />
+        <h4>Nathalie R. Arcillas</h4>
+        <p>Team Leader</p>
+      </div>
+
+      <div class="team-card" onclick="showBio('Jonairah manages our project design and documentation tasks.')">
+        <img src="images/leader2.jpg" alt="Team Leader 2" />
+        <h4>Jonairah D. Comacasar</h4>
+        <p>Team Leader</p>
+      </div>
+    </div>
+
+    <!-- Members -->
+    <h3 class="team-category">Members</h3>
+    <div class="team-row">
+      <div class="team-card" onclick="showBio('[name] contributes to research and presentation design.')">
+        <img src="images/member1.jpg" alt="Member 1" />
+        <h4>[name]</h4>
+        <p>Member</p>
+      </div>
+
+      <div class="team-card" onclick="showBio('[name] helps with website layout and content writing.')">
+        <img src="images/member2.jpg" alt="Member 2" />
+        <h4>[name]</h4>
+        <p>Member</p>
+      </div>
+
+      <div class="team-card" onclick="showBio('[name] supports coding and testing features for the site.')">
+        <img src="images/member3.jpg" alt="Member 3" />
+        <h4>[name]</h4>
+        <p>Member</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h2><i class="fas fa-project-diagram"></i>Overview</h2>
+    <p>
+      [Overview of our website or something about IamTheCode]
+    </p>
+
+    <div class="divider"></div>
+
+    <h2><i class="fas fa-tools"></i> Contact Us</h2>
+    <p>
+      For feedbacks and recommendations, reach out to us at quirinohighschool@gmail.com
+    </p>
+  </section>
+
+  <!-- SDG PROJECT SECTION -->
+  <section id="sdg" class="section hidden">
+    <h2><i class="fas fa-globe"></i> Our SDG Project</h2>
+    <p>
+      Our project focuses on <strong>SDG #4: Quality Education</strong>. We aim to make coding
+      accessible for everyone by creating interactive, creative, and inclusive
+      learning platforms for youth.
+    </p>
+
+    <div class="divider"></div>
+
+    <p>
+      Through our IamTheCode journey, we developed projects promoting equal
+      opportunities in technology education and empowering young learners to
+      become digital creators.
+    </p>
+  </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section id="testimonials" class="section hidden">
+    <h2><i class="fas fa-comment-dots"></i> Student Testimonials</h2>
+    <div class="testimonial-container" id="testimonial-list">
+      <p>"IamTheCode helped me discover a new love for coding and problem-solving."</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3>Share Your Thoughts</h3>
+    <form id="testimonial-form">
+      <textarea id="testimonial-input" placeholder="Write your message here..." required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- GALLERY SECTION -->
+  <section id="gallery" class="section hidden">
+    <h2><i class="fas fa-photo-video"></i> Project Documentation</h2>
+      <div class="Video container">  
+        <video controls>
+          <source src="videos/project_overview.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </div>
+      <div class="gallery-grid"></div>
+        <img src="images/project1.jpg" alt="Project 1" />
+        <img src="images/project2.jpg" alt="Project 2" />
+        <img src="images/event1.jpg" alt="Event 1" />
+      </div>
+  </section>
+
+  <!-- BIO POPUP -->
+  <div id="bio-popup" class="hidden">
+    <div class="bio-content">
+      <p id="bio-text"></p>
+      <button onclick="closeBio()">Close</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>"We code for change" - QHS IamTheCode Team</p>
+    <p>"Sa Aristotle, Lahat Panalo"</p>
+    <p>School Year 2025-2026</p>
+    <p>© 2025 Quirino High School IamTheCode Team</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
