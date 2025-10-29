@@ -1,33 +1,34 @@
-// Section Navigation
-function showSection(id) {
-  document.querySelectorAll('.section').forEach(section => {
-    section.classList.add('hidden');
-  });
-  document.getElementById(id).classList.remove('hidden');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+// Navigation section switching
+function showSection(sectionId) {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(sec => sec.classList.remove('active'));
+    document.getElementById(sectionId).classList.add('active');
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-// Bio Popup
+// Team Bio Popup
 function showBio(text) {
-  document.getElementById('bio-text').innerText = text;
-  document.getElementById('bio-popup').classList.remove('hidden');
+    document.getElementById('bio-text').innerText = text;
+    document.getElementById('bio-popup').classList.remove('hidden');
 }
 
 function closeBio() {
-  document.getElementById('bio-popup').classList.add('hidden');
+    document.getElementById('bio-popup').classList.add('hidden');
 }
 
-// Testimonials
-const form = document.getElementById('testimonial-form');
-const list = document.getElementById('testimonial-list');
-
-form.addEventListener('submit', function (e) {
-  e.preventDefault();
-  const input = document.getElementById('testimonial-input');
-  if (input.value.trim() !== '') {
-    const newTestimonial = document.createElement('p');
-    newTestimonial.textContent = `"${input.value}"`;
-    list.appendChild(newTestimonial);
+// Add Testimonials
+function addTestimonial() {
+    const input = document.getElementById('userTestimonial');
+    const text = input.value.trim();
+    if (text === '') {
+      alert('Please write something before submitting!');
+      return;
+    }
+    const container = document.getElementById('testimonial-list');
+    const newDiv = document.createElement('div');
+    newDiv.classList.add('testimonial');
+    newDiv.textContent = `"${text}" – Guest`;
+    container.appendChild(newDiv);
     input.value = '';
-  }
-});
+}
